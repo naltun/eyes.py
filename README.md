@@ -1,0 +1,10 @@
+# eyes (dot py)
+
+### What is it?
+A implementation of [eyes.sh](https://github.com/naltun/eyes.sh) written in Python.
+
+### Why?
+I am trying to get better with Python. As such, I have decided to reimplement some previous programs in Python, in order to learn additional features of the language.
+
+### License
+Licensed proudly under the GNU GPLv2. For more information on Free/Libre software, please visit [Wikipedia](https://en.wikipedia.org/wiki/Free_software_movement).

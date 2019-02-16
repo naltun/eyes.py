@@ -4,9 +4,6 @@ import requests
 import socket
 
 class Eyes:
-
-    def __init__(self):
-        pass
     
     # banner created with figlet.js (github.com/patorjk/figlet.js)
     @classmethod

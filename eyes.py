@@ -8,7 +8,7 @@ class Eyes:
     def __init__(self):
         pass
     
-    # # banner created with figlet.js (github.com/patorjk/figlet.js)
+    # banner created with figlet.js (github.com/patorjk/figlet.js)
     @classmethod
     def banner(self):
         """Prints the banner logo for eyes.py"""

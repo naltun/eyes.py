@@ -1,10 +1,10 @@
 # eyes (dot py)
 
 ### What is it?
-A implementation of [eyes.sh](https://github.com/naltun/eyes.sh) written in Python.
+An implementation of [eyes.sh](https://github.com/naltun/eyes.sh) written in Python.
 
 ### Why?
-I am trying to get better with Python. As such, I have decided to reimplement some previous programs in Python, in order to learn additional features of the language.
+I am trying to get better with Python. As such, I have decided to reimplement some previous programs in Python in order to learn additional features of the language.
 
 ### Installation & Use
 #### Installation

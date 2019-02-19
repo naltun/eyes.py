@@ -3,25 +3,31 @@
 import requests
 import socket
 
+from colorama import init, Fore
+
+# filter ANSI escape sequences from any STDOUT/STDERR and replace with Win32 calls
+# this will have no effect if running this package on other platforms
+init()
+
 class Eyes:
     
     # banner created with figlet.js (github.com/patorjk/figlet.js)
     @classmethod
     def banner(self):
         """Prints the banner logo for eyes.py"""
-        print("______\n"
+        print(Fore.LIGHTGREEN_EX + "______\n"
             "|  ___|\n"
             "| |__ _   _  ___  ___\n"
             "|  __| | | |/ _ \\/ __|\n"
             "| |__| |_| |  __/\\__ \\\n"
-            "\\____/\\__, |\\___||___/ v0.1beta\n"
+            "\\____/\\__, |\\___||___/ " + Fore.WHITE + "v" + Fore.LIGHTRED_EX + "0.1beta" + Fore.LIGHTGREEN_EX + "\n"
             "       __/ |\n"
-            "       |___/")
+            "       |___/\n")
     
     @classmethod
     def menu(self):
         """Prints the menu for interacting with eyes.py"""
-        print("1. Whois Lookup\n"
+        print(Fore.WHITE + "1. Whois Lookup\n"
             "2. DNS Lookup + Cloudflare Detector\n"
             "3. Zone Transfer\n"
             "4. Port Scan\n"
@@ -156,6 +162,7 @@ class Eyes:
             print("This program was created by Noah Altunian, and was adapted " \
                 "from github.com/naltun/eyes.sh, which was adapted from " \
                 "github.com/s0md3v/ReconDog. It is licensed under the GNU GPLv2.")
+            Eyes.display()
         
         elif choice == '13':
             print('Bye')

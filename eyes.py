@@ -180,7 +180,11 @@ class Eyes:
         Eyes.eyes()
 
 if __name__ == '__main__':
-    Eyes.banner()
-    Eyes.menu()
-    print('')
-    Eyes.eyes()
+    try:
+        Eyes.banner()
+        Eyes.menu()
+        print('')
+        Eyes.eyes()
+    except KeyboardInterrupt:
+        print("\nBye")
+        exit(0)

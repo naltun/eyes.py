@@ -3,6 +3,8 @@
 ### What is it?
 An implementation of [eyes.sh](https://github.com/naltun/eyes.sh) written in Python.
 
+![Eyes.py in use showing Eyes as ASCII art and the menu](https://i.imgur.com/DVi8DOT.png)
+
 ### Why?
 I am trying to get better with Python. As such, I have decided to reimplement some previous programs in Python in order to learn additional features of the language.
 

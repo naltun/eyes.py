@@ -2,7 +2,7 @@ import requests
 import socket
 
 from api import API
-from colorama import init, Fore
+from colorama import init, Fore, Style
 
 # filter ANSI escape sequences from any STDOUT/STDERR and replace with Win32 calls
 # this will have no effect if running this package on other platforms
@@ -116,6 +116,7 @@ class Eyes:
         
         elif choice == '13':
             print('Bye')
+            print(Style.RESET_ALL)
             exit(0)
         
         else:

@@ -18,7 +18,7 @@ class API:
         if 'cloudflare' in req.text:
             return "\n**Cloudflare detected**"
         else:
-            return "\n{} is *not* protected by Cloudflare".format(target)
+            return f"{target} is *not* protected by Cloudflare"
 
       
     @classmethod
@@ -47,7 +47,7 @@ class API:
         """Takes the user specified IP address and performs a honeypot probability scan.
         Note, this requires a valid shodan.io key.
         """
-        honey = "https://api.shodan.io/labs/honeyscore/{}?key=".format(target)
+        honey = f"https://api.shodan.io/labs/honeyscore/{target}?key="
         phoney = requests.get(honey).text
         if '0.0' in phoney:
             return 'Honeypot Probability: 0%'
@@ -78,7 +78,7 @@ class API:
     @classmethod
     def robots(self, target):
         """Takes the user specified domain or IP address and reads the contents of its robots.txt file."""
-        robot = "http://{}/robots.txt".format(target)
+        robot = f"http://{target}/robots.txt"
         return requests.get(robot).text
 
     
@@ -91,7 +91,7 @@ class API:
     @classmethod
     def iplocate(self, target):
         """Takes the user specified IP address and retrieves location information from its server."""
-        geo = "http://ipinfo.io/{}/geo".format(target)
+        geo = f"http://ipinfo.io/{target}/geo"
         return requests.get(geo).text
 
     
@@ -106,7 +106,7 @@ class API:
     def getip(target):
         """Takes the user specified domain name and returns its IP address."""
         ipAddr = socket.gethostbyname(target)
-        return "{}'s IP address is {}.".format(target, ipAddr)
+        return f"{target}'s IP address is {ipAddr}."
 
     
     @classmethod

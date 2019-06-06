@@ -10,14 +10,14 @@ class API:
     """
 
     @classmethod
-    def whois(self, target):
+    def whois(cls, target):
         """Takes the user specified domain or IP address and requests a WHOIS report."""
         whois = 'http://api.hackertarget.com/whois/?q=' + target
         return requests.get(whois).text
 
 
     @classmethod
-    def dns(self, target):
+    def dns(cls, target):
         """Takes the user specified domain or IP address and performs a Cloudflare detection scan."""
         dns = 'http://api.hackertarget.com/dnslookup/?q=' + target
         req = requests.get(dns)
@@ -31,28 +31,28 @@ class API:
 
 
     @classmethod
-    def zonetransfer(self, target):
+    def zonetransfer(cls, target):
         """Takes the user specified domain or IP address and performs a zone transfer scan."""
         zone = 'http://api.hackertarget.com/zonetransfer/?q=' + target
         return requests.get(zone).text
 
 
     @classmethod
-    def portscan(self, target):
+    def portscan(cls, target):
         """Takes the suer specified domain or IP address and performs a port scan."""
         ports = 'http://api.hackertarget.com/nmap/?q=' + target
         return requests.get(ports).text
 
 
     @classmethod
-    def getheader(self, target):
+    def getheader(cls, target):
         """Takes the user specified domain or IP address and grabs the HTTP header."""
         header = 'http://api.hackertarget.com/httpheaders/?q=' + target
         return requests.get(header).text
 
 
     @classmethod
-    def honeypot(self, target):
+    def honeypot(cls, target):
         """Takes the user specified IP address and performs a honeypot probability scan.
         Note, this requires a valid shodan.io key.
         """
@@ -88,41 +88,41 @@ class API:
 
 
     @classmethod
-    def robots(self, target):
+    def robots(cls, target):
         """Takes the user specified domain or IP address and reads the contents of its robots.txt file."""
         robot = f"http://{target}/robots.txt"
         return requests.get(robot).text
 
 
     @classmethod
-    def getlinks(self, target):
+    def getlinks(cls, target):
         """Takes the user specified domain or IP address and retrieves all links."""
         page = 'https://api.hackertarget.com/pagelinks/?q=http://' + target
         return requests.get(page).text
 
     @classmethod
-    def iplocate(self, target):
+    def iplocate(cls, target):
         """Takes the user specified IP address and retrieves location information from its server."""
         geo = f"http://ipinfo.io/{target}/geo"
         return requests.get(geo).text
 
 
     @classmethod
-    def traceroute(self, target):
+    def traceroute(cls, target):
         """Takes the user specified domain or IP address and performs a traceroute review."""
         trace = 'https://api.hackertarget.com/mtr/?q=' + target
         return requests.get(trace).text
 
 
     @classmethod
-    def getip(target):
+    def getip(cls, target):
         """Takes the user specified domain name and returns its IP address."""
         ip_addr = socket.gethostbyname(target)
         return f"{target}'s IP address is {ip_addr}."
 
 
     @classmethod
-    def about(self):
+    def about(cls):
         """Prints an 'about the program' message."""
         return "This program was created by Noah Altunian, and was adapted " \
                 "from github.com/naltun/eyes.sh, which was adapted from " \
